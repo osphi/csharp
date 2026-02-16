@@ -1,16 +1,11 @@
-﻿string mensagemDeBoasVindas = "\nSeja Bem-Vinda(o) ao projeto";
+﻿string mensagemDeBoasVindas = "\nSeja Bem-Vinda(o) ao SOUNDABLE";
 Console.WriteLine(mensagemDeBoasVindas);
 
-string curso = "Csharp primeiro contato";
-string nome = "Sophia";
-string sobrenome = "Tiberio";
-
-Console.WriteLine(curso);
-Console.WriteLine(nome + sobrenome);
+List<string> listaArtistas = new List<string>();
 
 // funções
 
-void ExibirMensagemDeBoasVindas ()
+void ExibirLogo ()
 {
     Console.WriteLine(@"
 
@@ -26,6 +21,8 @@ void ExibirMensagemDeBoasVindas ()
 
 void ExibirOpcoesMenu()
 {
+    ExibirLogo();
+
     Console.WriteLine("\nDigite 1 para registrar um artista");
     Console.WriteLine("Digite 2 para exibir todos os artistas");
     Console.WriteLine("Digite 3 para avaliar um artista");
@@ -40,7 +37,7 @@ void ExibirOpcoesMenu()
 
     switch (numeroOpcaoEscolhida)
     {
-        case 1: Console.WriteLine("Sua escolha foi: " + numeroOpcaoEscolhida);
+        case 1: RegistrarArtista();
             break;
         case 2: Console.WriteLine("Sua escolha foi: " + numeroOpcaoEscolhida);
             break;
@@ -55,5 +52,19 @@ void ExibirOpcoesMenu()
     }
 };
 
-ExibirMensagemDeBoasVindas();
+void RegistrarArtista()
+{
+    Console.Clear();
+    Console.WriteLine("Registro de artista");
+
+    Console.Write("\nDigite o nome do artista: ");
+    string nomeArtista = Console.ReadLine()!;
+    listaArtistas.Add(nomeArtista);
+    Console.WriteLine($"{nomeArtista} foi registrado com sucesso!");
+
+    Thread.Sleep(2000);
+    Console.Clear();
+    ExibirOpcoesMenu();
+}
+
 ExibirOpcoesMenu();
