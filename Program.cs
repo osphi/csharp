@@ -39,7 +39,7 @@ void ExibirOpcoesMenu()
     {
         case 1: RegistrarArtista();
             break;
-        case 2: Console.WriteLine("Sua escolha foi: " + numeroOpcaoEscolhida);
+        case 2: MostrarArtistasRegistrados();
             break;
         case 3: Console.WriteLine("Sua escolha foi: " + numeroOpcaoEscolhida);
             break;
@@ -63,6 +63,29 @@ void RegistrarArtista()
     Console.WriteLine($"{nomeArtista} foi registrado com sucesso!");
 
     Thread.Sleep(2000);
+    Console.Clear();
+    ExibirOpcoesMenu();
+}
+
+// for e foreach
+
+void MostrarArtistasRegistrados()
+{
+    Console.Clear();
+    Console.WriteLine("Exibindo artistas registrados\n");
+
+//    for (int i = 0; i < listaArtistas.Count; i++)
+//    {
+//        Console.WriteLine($"{listaArtistas[i]}");
+//    }
+
+    foreach (string artista in listaArtistas)
+    {
+        Console.WriteLine($"{artista}");
+    }
+
+    Console.WriteLine("\nSelecione qualquer tecla para voltar ao menu inicial.");
+    Console.ReadKey();
     Console.Clear();
     ExibirOpcoesMenu();
 }
