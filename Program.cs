@@ -55,7 +55,7 @@ void ExibirOpcoesMenu()
 void RegistrarArtista()
 {
     Console.Clear();
-    Console.WriteLine("Registro de artista");
+    ExibirTitulos("Registro de artistas");
 
     Console.Write("\nDigite o nome do artista: ");
     string nomeArtista = Console.ReadLine()!;
@@ -72,7 +72,7 @@ void RegistrarArtista()
 void MostrarArtistasRegistrados()
 {
     Console.Clear();
-    Console.WriteLine("Exibindo artistas registrados\n");
+    ExibirTitulos("Exibindo artistas registrados.");
 
 //    for (int i = 0; i < listaArtistas.Count; i++)
 //    {
@@ -88,6 +88,15 @@ void MostrarArtistasRegistrados()
     Console.ReadKey();
     Console.Clear();
     ExibirOpcoesMenu();
+}
+
+void ExibirTitulos(string titulo)
+{
+    int quantidadeLetras = titulo.Length;
+    string asteriscos = string.Empty.PadLeft(quantidadeLetras, '*');
+    Console.WriteLine(asteriscos);
+    Console.WriteLine(titulo);
+    Console.WriteLine(asteriscos + "\n");
 }
 
 ExibirOpcoesMenu();
